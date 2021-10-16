@@ -65,6 +65,8 @@ public class MeniuCeo1 extends JFrame implements ActionListener
         else if(e.getSource() == introducere)
         {
             System.out.println("butonul introducere a fost apasat");
+            new IntroducereInGaraj();
+            this.setVisible(false);
         }
         else if(e.getSource() == eliminare)
         {

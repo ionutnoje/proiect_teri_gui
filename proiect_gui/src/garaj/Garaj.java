@@ -32,61 +32,76 @@ public class Garaj {
     }
 
 
-    public void AdaugareInGarajCeo() {
+//    public void AdaugareInGarajCeo() {
+//
+//        int aux = VerificareNrMasiniInGaraj();
+//        System.out.println("aux = " + aux);
+//        System.out.println("introduceti numaru de masini pe care doriti sa le introduceti: ");
+//        int nr_masini_adaugate_ceo = sc.nextInt();
+//
+//
+//        for (int i = aux + 1; i <= nr_masini_adaugate_ceo + aux; i++) {
+//            System.out.println("\n\nMasina de pe indexul" + i);
+//            System.out.println("[" + i + "] " + "Marca: ");
+//            marca = sc.next();
+//            System.out.println("[" + i + "] " + "Model: ");
+//            model = sc.next();
+//            System.out.println("[" + i + "] " + "Vin: ");
+//            vin = sc.nextInt();
+//            System.out.println("[" + i + "] " + "Tip: ");
+//            tip = sc.next();
+//            System.out.println("[" + i + "] " + "HP: ");
+//            hp = sc.nextInt();
+//            System.out.println("[" + i + "] " + "culoare: ");
+//            culoare = sc.next();
+//            System.out.println("[" + i + "] " + "km: ");
+//            km = sc.nextInt();
+//            System.out.println("[" + i + "] " + "pret: ");
+//            pret = sc.nextDouble();
+//            System.out.println("[" + i + "] " + "stock: ");
+//            stock = sc.nextInt();
+//
+//            garaj[i] = new Masina(marca, model, tip, vin, hp, culoare, km, pret,stock);
+//
+////            //int verificare_pret = cb.verificareRetragere(garaj[i].getPret());
+////            System.out.println("garaj[i].getPret() * garaj[i].getStock()= " + garaj[i].getPret() * garaj[i].getStock());
+////            System.out.println("cb.get_sold()=" + cb.get_sold());
+////            if(garaj[i].getPret() * garaj[i].getStock() < cb.get_sold())
+////            {
+////                cb.retragereBani(56);
+////                System.out.println("A fost retrasa suma de " + 56 + "$ din contul firmei!");
+////                System.out.println("\nApasati orice tasta + ENTER ca sa va intoarceti la meniul Cumparator");
+////                String buffer = sc.next();
+////            }
+////            else if(garaj[i].getPret() * garaj[i].getStock() > cb.get_sold())
+////            {
+////                System.out.println("Nu sunt destui bani pe contul firmei pentru a se duce la bun sfarsit operatia!");
+////                String buffer = sc.next();
+////                int stergere_ultimul_element_vector = VerificareNrMasiniInGaraj();
+////                garaj[stergere_ultimul_element_vector] = null;
+////            }
+//
+//
+//
+//        }
+//
+//
+//    }
 
+
+    public void AdaugareInGarajCeo(String culoare, String tip, String marca, String model, int vin, int km, double pret, int stock, int hp) {
+        CreareGarajFaraAdaugara();
         int aux = VerificareNrMasiniInGaraj();
-        System.out.println("aux = " + aux);
-        System.out.println("introduceti numaru de masini pe care doriti sa le introduceti: ");
-        int nr_masini_adaugate_ceo = sc.nextInt();
-
-
-        for (int i = aux + 1; i <= nr_masini_adaugate_ceo + aux; i++) {
-            System.out.println("\n\nMasina de pe indexul" + i);
-            System.out.println("[" + i + "] " + "Marca: ");
-            marca = sc.next();
-            System.out.println("[" + i + "] " + "Model: ");
-            model = sc.next();
-            System.out.println("[" + i + "] " + "Vin: ");
-            vin = sc.nextInt();
-            System.out.println("[" + i + "] " + "Tip: ");
-            tip = sc.next();
-            System.out.println("[" + i + "] " + "HP: ");
-            hp = sc.nextInt();
-            System.out.println("[" + i + "] " + "culoare: ");
-            culoare = sc.next();
-            System.out.println("[" + i + "] " + "km: ");
-            km = sc.nextInt();
-            System.out.println("[" + i + "] " + "pret: ");
-            pret = sc.nextDouble();
-            System.out.println("[" + i + "] " + "stock: ");
-            stock = sc.nextInt();
+        for (int i = aux + 1; i <= 1 + aux; i++) {
 
             garaj[i] = new Masina(marca, model, tip, vin, hp, culoare, km, pret,stock);
-
-//            //int verificare_pret = cb.verificareRetragere(garaj[i].getPret());
-//            System.out.println("garaj[i].getPret() * garaj[i].getStock()= " + garaj[i].getPret() * garaj[i].getStock());
-//            System.out.println("cb.get_sold()=" + cb.get_sold());
-//            if(garaj[i].getPret() * garaj[i].getStock() < cb.get_sold())
-//            {
-//                cb.retragereBani(56);
-//                System.out.println("A fost retrasa suma de " + 56 + "$ din contul firmei!");
-//                System.out.println("\nApasati orice tasta + ENTER ca sa va intoarceti la meniul Cumparator");
-//                String buffer = sc.next();
-//            }
-//            else if(garaj[i].getPret() * garaj[i].getStock() > cb.get_sold())
-//            {
-//                System.out.println("Nu sunt destui bani pe contul firmei pentru a se duce la bun sfarsit operatia!");
-//                String buffer = sc.next();
-//                int stergere_ultimul_element_vector = VerificareNrMasiniInGaraj();
-//                garaj[stergere_ultimul_element_vector] = null;
-//            }
-
-
 
         }
 
 
     }
+
+
 
 
     public void CreareGarajFaraAdaugara() {
