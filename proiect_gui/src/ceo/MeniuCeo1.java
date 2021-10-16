@@ -71,6 +71,8 @@ public class MeniuCeo1 extends JFrame implements ActionListener
         else if(e.getSource() == eliminare)
         {
             System.out.println("butonul eliminare a fost apasat");
+            new StergereMasinaCeo();
+            this.setVisible(false);
         }
         else if(e.getSource() == interogare)
         {

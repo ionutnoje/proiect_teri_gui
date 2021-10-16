@@ -9,6 +9,12 @@ public class Afisare extends JFrame implements ActionListener
 {
     int valbuton;
 
+    JMenuBar menuBar = new JMenuBar();
+    JMenu navigare = new JMenu("navigare");
+    JMenuItem back = new JMenuItem("back");
+    JMenuItem exit = new JMenuItem("exit");
+
+
     JButton masina1 = new JButton();
     JButton masina2 = new JButton();
     JButton masina3 = new JButton();
@@ -47,7 +53,7 @@ public class Afisare extends JFrame implements ActionListener
         this.setLayout(new BorderLayout());
         this.setSize(800,400);
 
-
+        this.setJMenuBar(menuBar);
 
         this.add(titlu,BorderLayout.NORTH);
         this.add(panel,BorderLayout.CENTER);
@@ -121,6 +127,18 @@ public class Afisare extends JFrame implements ActionListener
         masina9.addActionListener(this);
         masina10.addActionListener(this);
 
+
+
+        menuBar.add(navigare);
+        navigare.add(exit);
+        navigare.add(back);
+        exit.addActionListener(this);
+        back.addActionListener(this);
+
+
+
+
+
     }
 
 
@@ -131,6 +149,7 @@ public class Afisare extends JFrame implements ActionListener
         {
             valbuton = 1;
             new AfisareInformatiiMasina(valbuton);
+            //masina1.setVisible(false);//eliminarea unui buton dintr o grila
 
         }
         else if(e.getSource() == masina2)
@@ -186,6 +205,15 @@ public class Afisare extends JFrame implements ActionListener
             valbuton = 10;
             new AfisareInformatiiMasina(valbuton);
 
+        }
+        else if(e.getSource() == exit)
+        {
+            System.exit(0);
+        }
+        else if(e.getSource() == back)
+        {
+            this.setVisible(false);
+            new MeniuCeo1();
         }
     }
 }

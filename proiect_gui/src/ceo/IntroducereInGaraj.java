@@ -22,6 +22,11 @@ public class IntroducereInGaraj extends JFrame implements ActionListener
     Garaj garaj = new Garaj();
 
 
+    JMenuBar menuBar = new JMenuBar();
+    JMenu navigare = new JMenu("navigare");
+    JMenuItem back = new JMenuItem("back");
+    JMenuItem exit = new JMenuItem("exit");
+
 
     JLabel marca = new JLabel("marca");
     JLabel model = new JLabel("model");
@@ -60,7 +65,7 @@ public class IntroducereInGaraj extends JFrame implements ActionListener
         this.setSize(600,400);
         this.add(panel1,BorderLayout.NORTH);
         this.add(panel2,BorderLayout.SOUTH);
-
+        this.setJMenuBar(menuBar);
         this.setVisible(true);
 
 
@@ -94,6 +99,14 @@ public class IntroducereInGaraj extends JFrame implements ActionListener
 
         buton.addActionListener(this);
 
+
+
+        menuBar.add(navigare);
+        navigare.add(exit);
+        navigare.add(back);
+        exit.addActionListener(this);
+        back.addActionListener(this);
+
     }
 
     @Override
@@ -122,6 +135,15 @@ public class IntroducereInGaraj extends JFrame implements ActionListener
 
             garaj.AdaugareInGarajCeo(culoarev,tipv,marcav,modelv,vinv,kmv,pretv,stockv,hpv);
 
+        }
+        else if(e.getSource() == exit)
+        {
+            System.exit(0);
+        }
+        else if(e.getSource() == back)
+        {
+            this.setVisible(false);
+            new MeniuCeo1();
         }
     }
 }

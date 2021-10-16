@@ -315,7 +315,8 @@ public class Garaj {
 //    }
 
 
-    public void EliminareDinGarajCeo() {
+    public void EliminareDinGarajCeo(int val) {
+        CreareGarajFaraAdaugara();
         int aux = VerificareNrMasiniInGaraj();
         System.out.println("aux = " + aux);
 
@@ -323,16 +324,15 @@ public class Garaj {
 
 
 
-        System.out.println("introduceti indexul: ");
-        index_masina = sc.nextInt();
 
-        if(index_masina < nr_masini_in_garaj)
+
+        if(val < nr_masini_in_garaj)
         {
             for(int i = 1; i <= nr_masini_in_garaj - 1; i++)
             {
                 for(int j = i + 1; j <= nr_masini_in_garaj; j++)
                 {
-                    if(i == index_masina)
+                    if(i == val)
                     {
                         for(int k = i; i <= nr_masini_in_garaj - 1; i++)
                         {
