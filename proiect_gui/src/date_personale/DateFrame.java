@@ -1,6 +1,7 @@
 package date_personale;
 
 import ceo.MeniuCeo1;
+import cont_bancar.ContBancar;
 import log_in.MyFrame;
 
 import javax.swing.*;
@@ -10,6 +11,8 @@ import java.awt.event.ActionListener;
 
 public class DateFrame extends JFrame implements ActionListener
 {
+    VectorDate vd = new VectorDate();
+    Ceo ceo;
     JMenuBar menuBar = new JMenuBar();
     JMenu navigare = new JMenu("navigare");
     JMenuItem exit = new JMenuItem("exit");
@@ -18,11 +21,12 @@ public class DateFrame extends JFrame implements ActionListener
 
     Ceo dateCeo = new Ceo();
 
+    int val;
 
     String nume;
     String prenume;
     int varsta;
-    int sumabani;
+    double sumabani;
 
 
     JLabel numel = new JLabel("nume: ");
@@ -37,10 +41,10 @@ public class DateFrame extends JFrame implements ActionListener
 
     JButton buton = new JButton("adaugare date");
 
+    ContBancar cb = new ContBancar(0.0);
 
 
-
-    public DateFrame()
+    public DateFrame(int val)
     {
         //FRAME
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -78,6 +82,13 @@ public class DateFrame extends JFrame implements ActionListener
         back.addActionListener(this);
 
 
+        this.val = val;
+
+
+
+
+
+
 
     }
 
@@ -88,16 +99,39 @@ public class DateFrame extends JFrame implements ActionListener
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == buton)
+        if(e.getSource() == buton && val == 1)
+        {
+
+
+            nume = numet.getText();
+            prenume = prenumet.getText();
+            varsta = Integer.parseInt(varstat.getText());
+            sumabani = Double.parseDouble(sumabanit.getText());
+            vd.IntroducereDateInVector(nume,prenume,varsta,sumabani);
+            System.out.println(vd.vector[1].nume);
+            System.out.println(vd.vector[1].prenume);
+            System.out.println(vd.vector[1].varsta);
+            System.out.println(vd.vector[1].suma);
+
+            this.setVisible(false);
+            new MeniuCeo1();
+
+
+
+        }
+        if(e.getSource() == buton && val == 2)
         {
             nume = numet.getText();
             prenume = prenumet.getText();
             varsta = Integer.parseInt(varstat.getText());
             sumabani = Integer.parseInt(sumabanit.getText());
-            dateCeo.nume(nume);
-            dateCeo.prenume(prenume);
-            dateCeo.varsta(varsta);
-            dateCeo.sumabani(sumabani);
+
+            cb.depunereBani(sumabani);
+
+            System.out.println(nume);
+            System.out.println(prenume);
+            System.out.println(varsta);
+            System.out.println(sumabani);
 
             this.setVisible(false);
             new MeniuCeo1();

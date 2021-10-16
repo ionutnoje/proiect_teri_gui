@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 
 public class MyFrame extends JFrame implements ActionListener
 {
+    int opt;
+
     JLabel ceo = new JLabel();
     JLabel cumparator = new JLabel();
     JLabel firma = new JLabel();
@@ -87,14 +89,16 @@ public class MyFrame extends JFrame implements ActionListener
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == ceob)
         {
+            opt = 1;
             System.out.println("ati apasat butonul de conectare pentru ceo");
-            new DateFrame();
+            new DateFrame(opt);
             this.setVisible(false);
         }
         else if(e.getSource() == cumparatorb)
         {
+            opt = 2;
             System.out.println("ati apasat butonul de conectare pentru cumparator");
-            new DateFrame();
+            new DateFrame(opt);
         }
         else if(e.getSource() == exitItem)
         {

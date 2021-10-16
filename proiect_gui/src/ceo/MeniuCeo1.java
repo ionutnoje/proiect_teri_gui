@@ -1,9 +1,13 @@
 package ceo;
 
+import cont_bancar.ContBancar;
+import date_personale.VectorDate;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Vector;
 
 public class MeniuCeo1 extends JFrame implements ActionListener
 {
@@ -13,7 +17,8 @@ public class MeniuCeo1 extends JFrame implements ActionListener
     JButton interogare = new JButton("interogare sold");
     JButton depozitare = new JButton("depozitare suma");
     JButton retragere = new JButton("retragere suma");
-
+    ContBancar cb = new ContBancar();
+    VectorDate vd = new VectorDate();
 
 
     public MeniuCeo1()
@@ -77,6 +82,9 @@ public class MeniuCeo1 extends JFrame implements ActionListener
         else if(e.getSource() == interogare)
         {
             System.out.println("butonul interogare a fost apasat");
+            vd.Initializare();
+            new InterogareSold();
+            System.out.println(cb.get_sold());
         }
         else if(e.getSource() == retragere)
         {

@@ -2,12 +2,14 @@ package cont_bancar;
 
 
 public class ContBancar {
-    private double _sold = 0.0;
+    private double _sold;
 
     public ContBancar()
     {
-        System.out.println("cont bancar folosit pentru ceo");
+
     }
+
+
 
     public ContBancar(double sold)
     {

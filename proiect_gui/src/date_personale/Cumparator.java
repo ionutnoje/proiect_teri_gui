@@ -2,30 +2,33 @@ package date_personale;
 
 public class Cumparator implements DatePersonale
 {
-    String nume;
-    String prenume;
-    int varsta;
-    int sumabani;
+    public String nume;
+    public String prenume;
+    public int varsta;
 
 
-    @Override
-    public void nume(String nume) {
-        this.nume = nume;
+    public Cumparator()
+    {
+        this.nume = "user";
+        this.prenume = "user";
+        this.varsta = 0;
     }
 
     @Override
-    public void prenume(String prenume) {
-        this.prenume = prenume;
+    public void nume(String numee) {
+        this.nume = numee;
     }
 
     @Override
-    public void varsta(int varsta) {
-        this.varsta = varsta;
+    public void prenume(String prenumee) {
+        this.prenume = prenumee;
     }
 
     @Override
-    public void sumabani(int sumabani) {
-        this.sumabani = sumabani;
+    public void varsta(int varstaa) {
+        this.varsta = varstaa;
     }
+
+
 }
 
