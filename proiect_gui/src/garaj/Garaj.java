@@ -120,6 +120,12 @@ public class Garaj {
 
     }
 
+    public String toString(int val)
+    {
+
+        return "marca: " + garaj[val].marca + "model: " + garaj[val].model + " stock: " + garaj[val].model + "--VIN: " + garaj[val].getVin() + "--Tip: " +
+                garaj[val].tip + "--Culoare: " + garaj[val].culoare + "--Km:  " + garaj[val].km + "--pret: " + garaj[val].getPret() + "$ "+ "--stock:"  + garaj[val].getStock() +" |";
+    }
 
     public void AfisareMasinaCuIndex(int index) {
         int aux = VerificareNrMasiniInGaraj();
